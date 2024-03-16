@@ -4,6 +4,18 @@ class TreeNode:
         self.left = None
         self.right = None
 
+# Sample tree
+#     1
+#    / \
+#   2   3
+#  / \
+# 4   5
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
 # Inorder Traversal:
 # Traverse the left subtree, visit the root node, and then traverse the right subtree.
 def inorder_traversal(root):
@@ -11,13 +23,6 @@ def inorder_traversal(root):
         inorder_traversal(root.left)
         print(root.val, end=" ")
         inorder_traversal(root.right)
-
-# Example usage
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-root.left.left = TreeNode(4)
-root.left.right = TreeNode(5)
 
 print("Inorder Traversal:")
 inorder_traversal(root)  # Output: 4 2 5 1 3
